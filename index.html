@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html ng-app="gitapi">
+	<head>
+		<title>GitHub Issue Search</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<link rel="stylesheet" type="css/text" href="style.css"/>
+		<script type="text/javascript" src="app.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Carme' rel='stylesheet' type='text/css'>
+
+	</head>
+
+	<body>
+		<h1 class='text-center'> GitHub Issue Analyser </h1>
+		<div class='wrapper' ng-controller="issueCtrl">
+			<p>Enter Your Github Repository URL</p>
+			<div class="input-group input-group-lg" >
+				<span class="input-group-addon" id="basic-addon3">https://github.com/user/repository</span>
+				<input type="url" class="form-control" ng-model='url' id="basic-url" aria-describedby="basic-addon3">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" ng-click="getGitIssues()">
+						Go!
+					</button> </span>
+			</div>
+			<div ng-show='loaded' class='table-responsive'>
+				<table class='table table-bordered table-hover'>
+					<caption class='text-center'>
+						Github Open Issues Analysis
+					</caption>
+					<thead>
+						<tr>
+							<th>Open Issues</th>
+							<th>Open Issues
+							<br>
+							since yesterday</th>
+							<th>Open Issues
+							<br>
+							since last week</th>
+							<th>Open Issues
+							<br>
+							before last week</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{total_issues}}</td>
+							<td>{{total_issues_yest}}</td>
+							<td>{{total_issues_seven - total_issues_yest}}</td>
+							<td>{{total_issues - total_issues_seven}}</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</body>
+
+</html>

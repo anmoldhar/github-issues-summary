@@ -1,0 +1,25 @@
+body {
+	background-image: url('https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/github-universe.jpg?itok=HCU81VX8');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Carme', sans-serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	margin-top: 5% ;
+	width: 70% ;
+}
+
+.table {
+	background-color: white;
+}
+
+h1 {
+	color : white;
+}
+
+p {
+	color: white;
+	font-size: 2em;
+}
