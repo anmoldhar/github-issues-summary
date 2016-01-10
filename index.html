@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
+<!-- link our angular app to our html -->
 <html ng-app="gitapi">
 	<head>
 		<title>GitHub Issue Search</title>
-
+		<!-- all css/js files required -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -14,16 +15,21 @@
 
 	<body>
 		<h1 class='text-center'> GitHub Issue Analyser </h1>
+		<!-- scope of our angular controller -->
 		<div class='wrapper' ng-controller="issueCtrl">
 			<p>Enter Your Github Repository URL</p>
+			<!--Use bootstrap input-group for url and button for awesome styling-->
 			<div class="input-group input-group-lg" >
 				<span class="input-group-addon" id="basic-addon3">https://github.com/user/repository</span>
+				<!-- ng-model for dynamically updating our url variable when user enters in input box -->
 				<input type="url" class="form-control" ng-model='url' id="basic-url" aria-describedby="basic-addon3">
 				<span class="input-group-btn">
+					<!-- call the getGitIssues of our controller wher user clicks Go button -->
 					<button class="btn btn-default" type="button" ng-click="getGitIssues()">
 						Go!
 					</button> </span>
 			</div>
+			<!-- bootstrap table for nice effects -->
 			<div ng-show='loaded' class='table-responsive'>
 				<table class='table table-bordered table-hover'>
 					<caption class='text-center'>
@@ -45,6 +51,7 @@
 					</thead>
 					<tbody>
 						<tr>
+							<!--response variables in angular according to time getting displayed dynamically-->
 							<td>{{total_issues}}</td>
 							<td>{{total_issues_yest}}</td>
 							<td>{{total_issues_seven - total_issues_yest}}</td>

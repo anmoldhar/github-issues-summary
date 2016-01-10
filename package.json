@@ -1,0 +1,22 @@
+{
+  "name": "github-issues-summary",
+  "version": "1.0.0",
+  "description": "Analyse various issues of particular github repository",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skull-king/github-issues-summary.git"
+  },
+  "author": "anmol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skull-king/github-issues-summary/issues"
+  },
+  "homepage": "https://github.com/skull-king/github-issues-summary#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
