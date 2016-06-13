@@ -40,7 +40,7 @@ app.controller('issueCtrl',['$scope','$http', function($scope, $http){
 		console.log("yesterday issue_url is:"+ issues_yest_url + "date is " + dateObj.toISOString());
 		$http.get(issues_yest_url)
 		.success(function(data){
-			// reponse contains all issues UPDATE since yesterday but we want only issues CREATED since yesterday
+			// response contains all issues UPDATE since yesterday but we want only issues CREATED since yesterday
 			// we filter array based on creation date so it contains only issues created since yesterday
 			data = data.filter(function(value) {
 				var createdDate = new Date(value.created_at);
@@ -68,7 +68,7 @@ app.controller('issueCtrl',['$scope','$http', function($scope, $http){
 		
 		$http.get(issues_seven_url)
 		.success(function(data){
-			// reponse contains all issues UPDATE since seven days but we want only issues CREATED since seven days
+			// response contains all issues UPDATE since seven days but we want only issues CREATED since seven days
 			// we filter array based on creation date so it contains only issues created since seven days
 				data = data.filter(function(value) {
 				var createdDate = new Date(value.created_at);
