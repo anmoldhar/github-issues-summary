@@ -5,7 +5,7 @@ Live Application URL(Deployed in Heroku using node): https://ancient-chamber-759
 NOTE: Only supported for google chrome web browser due to limited time span.
 
 Working:
-When user goes to specific url. Node server on getting request will send index.html file which uses angular JS to send http requests and interact with github api. On recieving successful response corresponding values are dynamically updated in table. For full working i have properly commented my source code.
+When user goes to specific url. Node server on getting request will send index.html file which uses angular JS to send http requests and interact with github api. On receiving successful response corresponding values are dynamically updated in table. For full working i have properly commented my source code.
 
 What can be improved:
 1) cross browser support. To run on internet explorer as well as firefox properly.
